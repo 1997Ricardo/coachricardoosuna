@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LionBeat | Entrenador Personal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4b33fdcb84.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Eslogan -->
+    <p class="slogan">Transforma tu cuerpo. Entrena con propósito. 🦁</p>
+
+    <!-- Avatar -->
+    <div class="avatar-wrapper">
+      <img src="assets/avatar.png" alt="Avatar de LionBeat" class="avatar"/>
+    </div>
+
+    <!-- Nombre y descripción -->
+    <h1>Ricardo Osuna</h1>
+    <p class="bio">Entrenador personal | Transformación física y mental | Motivación sin excusas 💪</p>
+
+    <!-- Enlaces -->
+    <div class="links">
+      <a href="https://www.instagram.com/lionbeat__" target="_blank" class="link">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://wa.me/34633090021" target="_blank" class="link">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <a href="mailto:lionbeat.adm@gmail.com" class="link">
+        <i class="fas fa-envelope"></i> Contacto por Email
+      </a>
+      <a href="https://calendar.app.google/WNAT7uGVV2aqwyX57" target="_blank" class="link reserve">
+        🗓️ Reserva tu sesión
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © <span id="year"></span> LionBeat. Todos los derechos reservados.
+  </footer>
+
+  <!-- Año automático -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
