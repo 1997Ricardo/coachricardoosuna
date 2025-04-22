@@ -138,8 +138,10 @@ body {
     }
   
     .link {
-      font-size: 15px;
-      padding: 12px;
-    }
+        width: 90%;
+        margin: 0 auto;
+        font-size: 15px;
+        padding: 12px;
+      }
   }
   
