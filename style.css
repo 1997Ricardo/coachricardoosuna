@@ -78,6 +78,7 @@ body {
     border-radius: 10px;
     text-decoration: none;
     font-weight: 600;
+    line-height: 1.2;
     transition: transform 0.2s ease, background 0.2s ease;
     display: flex;
     align-items: center;
