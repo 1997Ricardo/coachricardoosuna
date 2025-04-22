@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Planes y Tarifas | Ricardo Osuna</title>
+  <link rel="stylesheet" href="tarifas.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Elige tu plan y empieza tu cambio</h1>
+    <p>Planes de entrenamiento y nutrición diseñados para transformar tu cuerpo y tu mente.</p>
+  </section>
+
+  <!-- TARJETAS DE PRECIO -->
+  <section class="pricing">
+    <div class="card">
+      <h3>Plan Básico</h3>
+      <p class="price">49€/mes</p>
+      <ul>
+        <li>Rutina personalizada mensual</li>
+        <li>Plan nutricional base</li>
+        <li>Soporte por email</li>
+      </ul>
+      <button class="btn contact-btn" data-plan="Básico">Empezar</button>
+    </div>
+
+    <div class="card">
+      <h3>Entrenamiento Híbrido</h3>
+      <p class="price">50€/mes</p>
+      <ul>
+        <li>Comunidad exclusiva de WhatsApp</li>
+        <li>Grupo de competidores para rendir y divertirse</li>
+      </ul>
+      <button class="btn contact-btn" data-plan="Entrenamiento Híbrido">¡Quiero este plan!</button>
+    </div>
+
+    <div class="card destacado">
+      <h3>Plan Estándar</h3>
+      <p class="price">79€/mes</p>
+      <ul>
+        <li>Rutina semanal ajustada</li>
+        <li>Plan nutricional personalizado</li>
+        <li>1 videollamada al mes</li>
+        <li>Soporte por WhatsApp</li>
+      </ul>
+      <button class="btn contact-btn" data-plan="Estándar">Más popular</button>
+    </div>
+
+    <div class="card">
+      <h3>Plan Premium</h3>
+      <p class="price">119€/mes</p>
+      <ul>
+        <li>Entrenamiento + Nutrición Full</li>
+        <li>2 videollamadas/mes</li>
+        <li>Revisión semanal</li>
+        <li>Soporte prioritario</li>
+        <li>Feedback de voz personalizado</li>
+      </ul>
+      <button class="btn contact-btn" data-plan="Premium">Quiero este plan</button>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta">
+    <h4>¿Tienes dudas? Agenda una entrevista gratuita</h4>
+    <a href="https://calendar.app.google/WNAT7uGVV2aqwyX57" class="btn cta-btn">📅 Reservar entrevista</a>
+  </section>
+
+  <!-- SCRIPT para WhatsApp personalizado -->
+  <script>
+    const buttons = document.querySelectorAll(".contact-btn");
+    const phone = "34633090021";
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const plan = btn.dataset.plan;
+        const mensaje = `Hola Ricardo, estoy interesado en el Plan ${plan}. ¿Podemos hablar para empezarlo?`;
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, "_blank");
+      });
+    });
+  </script>
+
+</body>
+</html>

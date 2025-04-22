@@ -98,7 +98,16 @@ body {
   .reserve:hover {
     background: #15803d;
   }
-  
+  /* Botón de tarifas destacado */
+.tarifas-btn {
+  background-color: #fbbf24; /* Amarillo dorado */
+  color: #1f2937; /* Texto oscuro */
+}
+
+.tarifas-btn:hover {
+  background-color: #f59e0b; /* Más intensidad al pasar el mouse */
+}
+
   /* Footer */
   footer {
     width: 100%;
