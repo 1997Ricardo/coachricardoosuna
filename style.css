@@ -155,3 +155,92 @@ body {
       }
   }
   
+/* Animaciones de fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+.fade-in:nth-child(1) { animation-delay: 0.2s; }
+.fade-in:nth-child(2) { animation-delay: 0.4s; }
+.fade-in:nth-child(3) { animation-delay: 0.6s; }
+.fade-in:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bloque CTA */
+.cta {
+  margin: 20px 0 30px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #facc15;
+}
+
+/* Botón especial para el chatbot */
+.chat-btn {
+  background-color: #3b82f6;
+}
+
+.chat-btn:hover {
+  background-color: #2563eb;
+}
+/* Sección de captura de leads */
+.lead-capture {
+  background: #1f2937;
+  padding: 20px;
+  border-radius: 16px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.lead-capture h2 {
+  color: #fbbf24;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.lead-capture p {
+  color: #d1d5db;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+#leadForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#leadForm input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+#leadForm button {
+  background-color: #16a34a;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#leadForm button:hover {
+  background-color: #15803d;
+}
+
+.form-response {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #22c55e;
+}

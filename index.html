@@ -7,53 +7,124 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/4b33fdcb84.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <div class="container">
 
-    <!-- Eslogan -->
+  <!-- Scroll Suave -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container fade-in">
+
+    <!-- Eslogan + CTA -->
     <p class="slogan">Transforma tu cuerpo. Entrena con propósito 🦁</p>
 
-    <!-- Avatar -->
-    <div class="avatar-wrapper">
+    <!-- Avatar mejorado -->
+    <div class="avatar-wrapper fade-in">
       <img src="assets/avatar.png" alt="Avatar de LionBeat" class="avatar"/>
     </div>
 
     <!-- Nombre y descripción -->
-    <h1>Ricardo Osuna</h1>
-    <p class="bio">Entrenador personal | Transformación física y mental | Motivación sin excusas 💪</p>
+    <h1 class="fade-in">Ricardo Osuna</h1>
+    <p class="bio fade-in">Entrenador personal | Transformación física y mental | Motivación sin excusas 💪</p>
+
+    <!-- Bloque CTA -->
+    <div class="cta fade-in">
+      ¿Listo para empezar tu transformación? Elige tu camino abajo. 🚀
+    </div>
 
     <!-- Enlaces -->
-    <div class="links">
-      <a href="https://www.instagram.com/lionbeat__" target="_blank" class="link">
+    <div class="links fade-in">
+      <a href="https://www.instagram.com/lionbeat__" target="_blank" class="link track-click" data-link="Instagram">
         <i class="fab fa-instagram"></i> Instagram
       </a>
-      <a href="https://wa.me/34633090021" target="_blank" class="link">
+      <a href="https://wa.me/34633090021" target="_blank" class="link track-click" data-link="WhatsApp">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
-      <a href="mailto:lionbeat.adm@gmail.com" class="link">
+      <a href="mailto:lionbeat.adm@gmail.com" class="link track-click" data-link="Email">
         <i class="fas fa-envelope"></i> Contacto por Email
       </a>
-      <a href="https://calendar.app.google/WNAT7uGVV2aqwyX57" target="_blank" class="link reserve">
+      <a href="https://calendar.app.google/WNAT7uGVV2aqwyX57" target="_blank" class="link reserve track-click" data-link="Reserva llamada">
         🗓️ Reserva tu llamada gratis
       </a>
-
-      <!-- Nuevo botón a tarifas -->
-      <a href="tarifas.html" class="link tarifas-btn">
+      <a href="tarifas.html" class="link tarifas-btn track-click" data-link="Ver Tarifas">
         💳 Ver Planes y Tarifas
+      </a>
+      <a href="https://lionbeat.vercel.app/" target="_blank" class="link chat-btn track-click" data-link="Habla con Asistente">
+        💬 Habla con nuestro Asistente Virtual
       </a>
     </div>
   </div>
-
+  <div class="lead-capture fade-in">
+    <h2>🚀 Da el primer paso</h2>
+    <p>Suscríbete para recibir asesoría gratuita y tips de entrenamiento.</p>
+    <form id="leadForm">
+      <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+      <input type="email" id="email" name="email" placeholder="Tu email" required>
+      <button type="submit">Unirme 🔥</button>
+    </form>
+    <p id="formResponse" class="form-response"></p>
+  </div>
+  
   <!-- Footer -->
   <footer>
     © <span id="year"></span> LionBeat. Todos los derechos reservados.
   </footer>
 
-  <!-- Año automático -->
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+ <!-- Scripts -->
+<script>
+  // Año automático
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Captura simple de leads
+  const form = document.getElementById('leadForm');
+  const response = document.getElementById('formResponse');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    if (name && email) {
+      try {
+        const res = await fetch('https://script.google.com/macros/s/AKfycbw7Vh2ZorAFaJgsu3ZlLnf7jfY7lpdS0frAWhYNxZ7ofFlbix7xYZwx2EPDRYB0W7W9/exec', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name, email })
+        });
+
+        const result = await res.json();
+        if (result.result === "success") {
+          response.textContent = "✅ ¡Gracias! Te contactaremos pronto.";
+          form.reset();
+        } else {
+          response.textContent = "❌ Algo salió mal. Inténtalo otra vez.";
+        }
+      } catch (error) {
+        console.error(error);
+        response.textContent = "❌ Error de red. Inténtalo más tarde.";
+      }
+    } else {
+      response.textContent = "❌ Por favor completa todos los campos.";
+    }
+  });
+
+  // Tracking de clics
+  const links = document.querySelectorAll('.track-click');
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const linkName = e.currentTarget.getAttribute('data-link');
+      console.log(`Clic en: ${linkName}`);
+    });
+  });
+</script>
+
 </body>
 </html>
+
 
