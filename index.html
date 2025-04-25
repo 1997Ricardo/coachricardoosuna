@@ -53,76 +53,23 @@
       <a href="tarifas.html" class="link tarifas-btn track-click" data-link="Ver Tarifas">
         💳 Ver Planes y Tarifas
       </a>
-      <a href="https://lionbeat.vercel.app/" target="_blank" class="link chat-btn track-click" data-link="Habla con Asistente">
-        💬 Habla con nuestro Asistente Virtual
-      </a>
-    </div>
+     
   </div>
-  <div class="lead-capture fade-in">
-    <h2>🚀 Da el primer paso</h2>
-    <p>Suscríbete para recibir asesoría gratuita y tips de entrenamiento.</p>
-    <form id="leadForm">
-      <input type="text" id="name" name="name" placeholder="Tu nombre" required>
-      <input type="email" id="email" name="email" placeholder="Tu email" required>
-      <button type="submit">Unirme 🔥</button>
-    </form>
-    <p id="formResponse" class="form-response"></p>
-  </div>
+
   
   <!-- Footer -->
   <footer>
     © <span id="year"></span> LionBeat. Todos los derechos reservados.
   </footer>
 
- <!-- Scripts -->
+<!-- Scripts -->
 <script>
   // Año automático
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Captura simple de leads
-  const form = document.getElementById('leadForm');
-  const response = document.getElementById('formResponse');
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-
-    if (name && email) {
-      try {
-        const res = await fetch('https://script.google.com/macros/s/AKfycbw7Vh2ZorAFaJgsu3ZlLnf7jfY7lpdS0frAWhYNxZ7ofFlbix7xYZwx2EPDRYB0W7W9/exec', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ name, email })
-        });
-
-        const result = await res.json();
-        if (result.result === "success") {
-          response.textContent = "✅ ¡Gracias! Te contactaremos pronto.";
-          form.reset();
-        } else {
-          response.textContent = "❌ Algo salió mal. Inténtalo otra vez.";
-        }
-      } catch (error) {
-        console.error(error);
-        response.textContent = "❌ Error de red. Inténtalo más tarde.";
-      }
-    } else {
-      response.textContent = "❌ Por favor completa todos los campos.";
-    }
-  });
-
-  // Tracking de clics
-  const links = document.querySelectorAll('.track-click');
-  links.forEach(link => {
-    link.addEventListener('click', (e) => {
-      const linkName = e.currentTarget.getAttribute('data-link');
-      console.log(`Clic en: ${linkName}`);
-    });
-  });
 </script>
+
 
 </body>
 </html>
