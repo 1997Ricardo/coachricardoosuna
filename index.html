@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/4b33fdcb84.js" crossorigin="anonymous"></script>
-
-  <!-- Scroll Suave -->
   <style>
     html {
       scroll-behavior: smooth;
@@ -19,59 +17,56 @@
 <body>
   <div class="container fade-in">
 
-    <!-- Eslogan + CTA -->
     <p class="slogan">Transforma tu cuerpo. Entrena con propósito 🦁</p>
 
-    <!-- Avatar mejorado -->
     <div class="avatar-wrapper fade-in">
       <img src="assets/avatar.png" alt="Avatar de LionBeat" class="avatar"/>
     </div>
 
-    <!-- Nombre y descripción -->
     <h1 class="fade-in">Ricardo Osuna</h1>
     <p class="bio fade-in">Entrenador personal | Transformación física y mental | Motivación sin excusas 💪</p>
 
-    <!-- Bloque CTA -->
     <div class="cta fade-in">
       ¿Listo para empezar tu transformación? Elige tu camino abajo. 🚀
     </div>
 
-    <!-- Enlaces -->
+    <!-- Bloque: Contacto -->
+    <h2 class="section-title">📞 Contacto directo</h2>
     <div class="links fade-in">
-      <a href="https://www.instagram.com/lionbeat__" target="_blank" class="link track-click" data-link="Instagram">
-        <i class="fab fa-instagram"></i> Instagram
-      </a>
-      <a href="https://wa.me/34633090021" target="_blank" class="link track-click" data-link="WhatsApp">
+      <a href="https://wa.me/34633090021" target="_blank" class="link track-click">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
-      <a href="mailto:lionbeat.adm@gmail.com" class="link track-click" data-link="Email">
+      <a href="mailto:lionbeat.adm@gmail.com" class="link track-click">
         <i class="fas fa-envelope"></i> Contacto por Email
       </a>
-      <a href="https://calendar.app.google/WNAT7uGVV2aqwyX57" target="_blank" class="link reserve track-click" data-link="Reserva llamada">
+      <a href="https://calendar.app.google/WNAT7uGVV2aqwyX57" target="_blank" class="link reserve track-click">
         🗓️ Reserva tu llamada gratis
       </a>
-      <a href="https://lion-beat-hybrid-pro.vercel.app/" class="link tarifas-btn track-click" data-link="Ver Tarifas">
-        🦁 LionBeat Hybrid Pro 🦁
-      </a>
-     
+    </div>
+
+    <!-- Bloque: Planes -->
+    <h2 class="section-title">💪 Planes personalizados</h2>
+    <div class="links fade-in">
+      <a href="plan-ergometros.html" class="link plan-ergometros">🚣 Plan de Ergómetros – 8 semanas</a>
+      <a href="plan-carrera.html" class="link plan-carrera">🏃 Mejora tu Carrera – 8 semanas</a>
+      <a href="hibrido.html" class="link plan-hibrido">🦾 Entrenamiento Híbrido</a>
+      <a href="nutricion.html" class="link plan-nutricion">🥗 Nutrición Personalizada</a>
+    </div>
+
+    <!-- CTA final -->
+    <div class="cta-final fade-in">
+      ¿Quieres empezar hoy tu cambio?
+      <a href="https://wa.me/34633090021" class="link plan-nutricion" style="margin-top: 14px;">🔥 Hablemos por WhatsApp</a>
+    </div>
   </div>
 
-  
-  <!-- Footer -->
   <footer>
     © <span id="year"></span> LionBeat. Todos los derechos reservados.
   </footer>
 
-<!-- Scripts -->
-<script>
-  // Año automático
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-
-</script>
-
-
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
 
